@@ -41,10 +41,9 @@ const doctorSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId,
                 ref:'Hospital'
             }
-            
+
         ],
         specialization:{},
-        patientsAssigned:{}
     },{timestamps:true}
 )
 

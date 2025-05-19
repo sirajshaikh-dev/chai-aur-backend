@@ -35,9 +35,21 @@ const patientSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref:'Hospital'
         },
-        admissionDate:{},
+        doctorAssigned:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Doctor',
+        },
+        medicalHistory:[
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref:'MedicalRecord'
+            }
+        ],
+        admissionDate:{
+            type:Date,
+            required:true,
+        },
         dischargeDate:{},
-        doctorAssigned:{},
     },{timestamps:true}
 )
 
