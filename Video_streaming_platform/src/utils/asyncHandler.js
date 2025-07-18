@@ -1,14 +1,15 @@
 const asyncHandler = (requestHandler)=>{
-    (req,res,next)=>{
+    return (req,res,next)=>{
         Promise
         .resolve(requestHandler(req,res,next))
-        .catch((err)=>{next(err)})
+        .catch((err)=>next(err))
     }
 }
 
+export {asyncHandler}
 
 // Method2: Using try catch
-//asyncHandler is higher order func: accept func as parameter and can return
+//asyncHandler is higher order func: accept func as parameter and return
 // const asyncHandler= (fn)=>{()=>{}}
 // const asyncHandler= (fn)=>{async()=>{}}
 /*
